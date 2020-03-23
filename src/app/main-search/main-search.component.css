@@ -66,3 +66,17 @@ h4{
 mat-spinner{
     margin: auto;
 }
+
+.infoPrevisao{
+float: left;
+}
+
+.infoImg{
+    float: right;
+}
+
+.infoImg img{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    width: 100px;
+    height: 100px;
+}
