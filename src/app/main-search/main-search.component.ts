@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SearchService } from '../apisearch.service';
 import { resultadoModel } from "../models/search.model";
+import { Template } from '@angular/compiler/src/render3/r3_ast';
+
+
 
 @Component({
   selector: 'app-main-search',
@@ -19,6 +22,22 @@ export class MainSearchComponent implements OnInit {
   foto: string;
   public resultadoPesquisa = <resultadoModel>{};
   
+  multi: any = [];
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis: boolean = true;
+  showYAxis: boolean = true;
+  gradient: boolean = true;
+  showLegend: boolean = true;
+  showXAxisLabel: boolean = true;
+  xAxisLabel: string = 'Dia';
+  showYAxisLabel: boolean = true;
+  legendTitle = "Legenda";
+  yAxisLabel: string = 'Temperatura';
+  colorScheme = {
+    domain: ['#001CF0', '#F70000', '#AAAAAA']
+  };
 
   constructor(public searchService: SearchService) { }
 
@@ -48,12 +67,17 @@ export class MainSearchComponent implements OnInit {
       this.resultadoPesquisa.data = resultado.results.date;
       this.hasSearched = 1;
       this.resultadoPesquisa.previsao.forEach((item, index)=>{
+        this.multi.push({name: item.date, series: [{name: "Temp. Min.", value: item.min}, {name: "Temp. Max.", value: item.max}]})
+
         for(let i = 0; i < this.tempos.length; i++){
           if(item.condition == this.tempos[i].name){
             this.resultadoPesquisa.previsao[index].img = this.tempos[i].img;
             }
         }
       })
+
+
+  
       console.log(this.resultadoPesquisa.previsao);
     })
     

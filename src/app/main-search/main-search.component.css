@@ -5,11 +5,22 @@
     padding: 2rem 0 5rem 0;
 }
 
-mat-card{
+.graphicContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 5rem 0;
+}
+
+.matCardGraphic{
+    width: 40%; 
+}
+
+.matCardSearch{
     width: 40%;
 }
 
-mat-card-header{
+.matHeaderSearch{
     display: flex;
     justify-content: center;
 }
@@ -68,7 +79,7 @@ mat-spinner{
 }
 
 .infoPrevisao{
-float: left;
+    float: left;
 }
 
 .infoImg{

@@ -1,6 +1,6 @@
 <div class="container">
-    <mat-card>
-        <mat-card-header>
+    <mat-card class="matCardSearch">
+        <mat-card-header class="matHeaderSearch">
             <form (submit)="onSearch(searchForm)" #searchForm="ngForm">
                 <mat-form-field>
                     <mat-label>Cidade</mat-label>
@@ -36,9 +36,41 @@
                     </div>
                 </mat-tab>
               </mat-tab-group>
+
+        </mat-card-content>
+    </mat-card>
+
+</div>
+
+<div class="container" *ngIf="hasSearched == 1">
+    <mat-card class="matCardGraphic">
+        <mat-card-header class="matHeaderSearch">
+            <h4>Gráfico da previsão do tempo dos próximos dias</h4>
+        </mat-card-header>
+        <mat-card-content>
+            <ngx-charts-bar-vertical-2d
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [legendTitle]="legendTitle"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel">
+            </ngx-charts-bar-vertical-2d>
         </mat-card-content>
     </mat-card>
 </div>
+
+
+
+
+
+
 
             <!-- <mat-card-title>Cidade: {{resultadoPesquisa.cidade}}</mat-card-title>
             <h4>Descrição: {{resultadoPesquisa.descricaoTempo}}</h4>

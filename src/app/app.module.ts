@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import {MatIconModule} from '@angular/material/icon'
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {MatIconModule} from '@angular/material/icon'
     FormsModule,
     HttpClientModule,
     MatIconModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
