@@ -15,6 +15,7 @@ export class MainSearchComponent implements OnInit {
   public resultado:any;
   hasSearched: number = 0;
   isLoading = false;
+  firstLoad = 0;
   foto: string;
   public resultadoPesquisa = <resultadoModel>{};
   
@@ -27,10 +28,11 @@ export class MainSearchComponent implements OnInit {
 
   onSearch(form:NgForm){
     this.isLoading = true;
+    this.firstLoad++;
     this.searchService.searchTemp(form.value.cidade,form.value.estadoSelecionado)
     .subscribe((resultado) =>{
       this.isLoading = false;
-
+      this.firstLoad++;
       this.resultadoPesquisa.cidade = resultado.results.city;
       var buffer:string = this.resultadoPesquisa.cidade.substring(0, this.resultadoPesquisa.cidade.length - 1);
       this.resultadoPesquisa.cidade = buffer;
