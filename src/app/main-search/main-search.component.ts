@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SearchService } from '../apisearch.service';
-import { Observable } from 'rxjs';
 import { resultadoModel } from "../models/search.model";
 
 @Component({
@@ -15,6 +14,7 @@ export class MainSearchComponent implements OnInit {
 
   public resultado:any;
   hasSearched: number = 0;
+  isLoading = false;
   public resultadoPesquisa = <resultadoModel>{};
   
 
@@ -25,8 +25,11 @@ export class MainSearchComponent implements OnInit {
   }
 
   onSearch(form:NgForm){
+    this.isLoading = true;
     this.searchService.searchTemp(form.value.cidade,form.value.estadoSelecionado)
     .subscribe((resultado) =>{
+      this.isLoading = false;
+      
       this.resultadoPesquisa.cidade = resultado.results.city;
       var buffer:string = this.resultadoPesquisa.cidade.substring(0, this.resultadoPesquisa.cidade.length - 1);
       this.resultadoPesquisa.cidade = buffer;

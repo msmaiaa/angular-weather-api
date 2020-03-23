@@ -16,12 +16,13 @@
             </form>
         </mat-card-header>
         <mat-card-content *ngIf="hasSearched == 1">
-            <div class="contentHeader">
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+            <div class="contentHeader" *ngIf="!isLoading">
                 <h4>Cidade: {{resultadoPesquisa.cidade}}</h4>
                 <h4>Temperatura atual: {{resultadoPesquisa.temperatura}}º Celsius Russomanos</h4>
             </div>
 
-            <mat-tab-group>
+            <mat-tab-group *ngIf="!isLoading">
                 <mat-tab *ngFor="let f of resultadoPesquisa.previsao" class="mat-tab" label="{{f.weekday}}"> 
                     <h4>Data: {{f.date}}</h4>
                     <h4>Temperatura máxima: {{f.max}}</h4>
