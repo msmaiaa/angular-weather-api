@@ -9,8 +9,6 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import {MatIconModule} from '@angular/material/icon'
-import { AppRoutingModule } from './app-routing.module';
-import { GraphicsComponent } from './graphics/graphics.component';
 
 
 @NgModule({
@@ -18,8 +16,7 @@ import { GraphicsComponent } from './graphics/graphics.component';
     AppComponent,
     HeaderComponent,
     MainSearchComponent,
-    FooterComponent,
-    GraphicsComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +25,6 @@ import { GraphicsComponent } from './graphics/graphics.component';
     FormsModule,
     HttpClientModule,
     MatIconModule,
-    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

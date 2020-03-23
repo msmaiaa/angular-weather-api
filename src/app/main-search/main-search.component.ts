@@ -51,7 +51,6 @@ export class MainSearchComponent implements OnInit {
         for(let i = 0; i < this.tempos.length; i++){
           if(item.condition == this.tempos[i].name){
             this.resultadoPesquisa.previsao[index].img = this.tempos[i].img;
-            console.log(i);
             }
         }
       })
