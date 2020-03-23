@@ -27,6 +27,9 @@ export class MainSearchComponent implements OnInit {
   }
 
   onSearch(form:NgForm){
+    if(form.invalid){
+      return;
+    }
     this.isLoading = true;
     this.firstLoad++;
     this.searchService.searchTemp(form.value.cidade,form.value.estadoSelecionado)
