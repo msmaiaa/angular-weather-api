@@ -35,9 +35,11 @@ export class MainSearchComponent implements OnInit {
   //guardar o resultado da pesquisa
   public resultadoPesquisa = <resultadoModel>{};
   
-  // opções do gráfico
+  //guardar o conteudo do grafico
   multi: any = [];
-  view: any[] = [700, 400];
+
+  // opções do gráfico
+  view: any[] = [700, 500];
   showXAxis: boolean = true;
   showYAxis: boolean = true;
   gradient: boolean = true;
@@ -70,6 +72,10 @@ export class MainSearchComponent implements OnInit {
     //faz a query com os dados do formulário
     this.searchService.searchTemp(form.value.cidade,form.value.estadoSelecionado)
     .subscribe((resultado) =>{
+
+      //limpar o grafico
+      this.multi = [];
+
       this.isLoading = false;
       this.firstLoad++;
 
