@@ -8,8 +8,8 @@ Este é um projeto feito com Angular 8, usando a framework de CSS Material. O ob
 
 ## Todo list
 
-Melhorar o design
-Adicionar gráficos
+Melhorar o design, 
+Adicionar gráficos, 
 Incluir router link?
 
 
