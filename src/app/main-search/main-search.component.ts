@@ -39,7 +39,7 @@ export class MainSearchComponent implements OnInit {
   multi: any = [];
 
   // opções do gráfico
-  view: any[] = [700, 500];
+  //view: any[] = [600, 400];
   showXAxis: boolean = true;
   showYAxis: boolean = true;
   gradient: boolean = true;

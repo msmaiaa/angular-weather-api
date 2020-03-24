@@ -12,6 +12,11 @@
     padding: 2rem 0 5rem 0;
 }
 
+.matContentGraph{
+    width: 80%;
+    height: 500px;
+}
+
 .matCardGraphic{
     width: 40%; 
 }
@@ -24,6 +29,8 @@
     display: flex;
     justify-content: center;
 }
+
+
 
 mat-form-field{
     padding: 0px 1rem 0px 1rem;
