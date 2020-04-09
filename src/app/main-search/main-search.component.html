@@ -22,7 +22,6 @@
                 <h4>Cidade: {{resultadoPesquisa.cidade}}</h4>
                 <h4>Temperatura atual: {{resultadoPesquisa.temperatura}}º Celsius Russomanos</h4>
             </div>
-
             <mat-tab-group *ngIf="!isLoading">
                 <mat-tab *ngFor="let f of resultadoPesquisa.previsao" class="mat-tab" label="{{f.weekday}}">
                     <div class="infoPrevisao">
@@ -39,7 +38,6 @@
 
         </mat-card-content>
     </mat-card>
-
 </div>
 
 <div class="container" *ngIf="hasSearched == 1">
@@ -67,15 +65,3 @@
 </div>
 
 
-
-
-
-
-
-            <!-- <mat-card-title>Cidade: {{resultadoPesquisa.cidade}}</mat-card-title>
-            <h4>Descrição: {{resultadoPesquisa.descricaoTempo}}</h4>
-            <h4>Horário: {{resultadoPesquisa.horario}} <mat-icon>timer</mat-icon></h4> 
-            <h4>Temperatura: {{resultadoPesquisa.temperatura}} <mat-icon>search</mat-icon></h4>
-            <h4>Umidade: {{resultadoPesquisa.umidade}}</h4>
-            <h4>Velocidade do vento: {{resultadoPesquisa.velVento}}</h4>
-            <h4>Data: {{resultadoPesquisa.data}} <mat-icon>calendar_today</mat-icon></h4> -->
