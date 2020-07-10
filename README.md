@@ -14,8 +14,8 @@ Este é um projeto feito com Angular 8, usando a framework de CSS Material. O ob
     <li>
         Api do HG Brasil usada para receber dados sobre temperaturas em vários locais <https://hgbrasil.com/>
     </li>
-
-
 <ul>
+  
+  ![](gif.gif)
 
 
